@@ -6,7 +6,6 @@ Neste curso iremos criar uma aplicação com a **metodologia de frontend** usado
 
 ## Aula 1 - A base de tudo
 >Estratégias importantes para seu estudo de programação Web, ajustar sua mentalidade, conhecer nossa comunidade, além da apresentação das tecnologias HTML e CSS que usaremos na nossa Aplicação e o melhor: Vamos iniciar nosso app
->14/01/2021
 
 O frontend é tudo aquilo que o usuário possui acesso
 Hard skills é tudo aquilo técnico que sabemos
@@ -27,3 +26,5 @@ O CSS funciona em formato de cascata onde isso quer dizer que a configuração q
 
 Devemos criar a estilização em um arquivo separado mais evitar poluição visual
 Box mode é o modelo das tag que o usuário visualiza
+
+>14/01/2021
