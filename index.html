@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head> <!-- OS METADADOS REFERENCIA OS ARQUIVOS COMO DEFINIR NO NOME DE CABEÇALHO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.finance$</title>
+  
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body> <!-- ESTE ITEM O USUÁRIO POSSUI ACESSO E NAO E UM METADADO -->
+  <header> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+    <h1 id="logo">dev.finance$</h1> <!-- CRIA UM TÍTULO -->
+  </header>
+  
+  <main class="container"> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+    <section id="balance"> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+      <h2>Balanço</h2> <!-- CRIA UM SUBTITULO -->
+      
+      <div class="card">
+        <h3>Entradas</h3>
+        <p>R$ 5.000,00</p> <!-- CRIA UM PARAGRAFO -->
+      </div>
+      
+      <div class="card"> <!-- CRIA UMA DIVISÃO GENÉRICA -->
+        <h3>Saídas</h3>
+        <p>R$ 2.000,00</p>
+      </div>
+      
+      <div class="card total">
+        <h3>Total</h3>
+        <p>R$ 3.000,00</p>
+      </div>
+    </section>
+    
+    <section id="transaction">
+      <h2>Transações</h2>
+      
+      <table id="data-table"> <!-- CRIA UMA TABELA -->
+        <thead> <!-- DEFINE O CABEÇALHO -->
+          <tr> <!-- CRIA UMA LINHA -->
+            <th>Descrição</th> <!-- CRIA UMA COLUNA -->
+            <th>Valor</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        
+        <tbody> <!-- CRIA O LOCAL DOS DADOS DA TABELA -->
+          <tr>
+            <td class="description">Luz</td>
+            <td class="expense">- R$ 500,00</td>
+            <td class="date">23/01/2021</td>
+          </tr>
+          
+          <tr>
+            <td class="description">Criação de web site</td>
+            <td class="income">R$ 5.000,00</td>
+            <td class="date">23/01/2021</td>
+          </tr>
+          
+          <tr>
+            <td class="description">Internet</td>
+            <td class="expense">- R$ 200,00</td>
+            <td class="date">23/01/2021</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  
+  <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+  <footer>
+    <p>dev.finance$</p>
+  </footer>
+</body>
+</html>
