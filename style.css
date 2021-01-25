@@ -1,5 +1,8 @@
 :root { /* CRIA CONFIGURAÇÕES PARA A RAIZ DO HTML */
   --dark-blue: #363f5f; /* CRIA UMA VARIÁVEL */
+  --green: #49aa26;
+  --light-green: #3dd705;
+  --red: #e92929;
 }
 
 * { /* SELECIONA TODAS AS TAGS */
@@ -8,9 +11,31 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 93.75%; /* 15px */
+}
+
 body {
   background: #f0f2f5;
   font-family: 'Poppins', sans-serif;
+}
+
+ /* FAZ UM ITEM INVISÍVEL MAIS PERCEPTÍVEL PARA OS PROGRAMAS DE ACESSIBILIDADE */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container { /* BUSCA UMA CLASSE NOMEADA ASSIM */
+  width: min(90vw, 800px);
+  margin: auto;
 }
 
 h2 {
@@ -20,9 +45,49 @@ h2 {
   font-weight: normal;
 }
 
-.container { /* BUSCA UMA CLASSE NOMEADA ASSIM */
-  width: min(90vw, 800px);
-  margin: auto;
+a {
+  color: var(--green);
+  text-decoration: none; /* REMOVE O UNDERLINE */
+}
+
+a:hover {
+  color: var(--light-green);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: white;
+  background: var(--green);
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer; /* MUDA O ÍCONE DO CURSOR */
+}
+
+button:hover {
+  background: var(--light-green);
+}
+
+/* BUSCA UMA TAG QUE POSSUIA A CLASSE BUTTON E NEW */
+.button.new {
+  display: inline-block; /* FAZ O LINK FUNCIONAR SOMENTE ONDE POSSUI LETRAS */
+  margin-bottom: .8rem; /* NÃO FUNCIONAR COM O DISPLAY INLINE */
+}
+
+.button.cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.button.cancel:hover {
+  opacity: 1;
 }
 
 header {
@@ -56,6 +121,9 @@ header {
 .card h3 {
   font-weight: normal;
   font-size: 1rem;
+  display: flex; /* FAZ OS ITENS FICAREM UM NO LADO DO OUTRO */
+  align-items: center; /* CENTRALIZA HORIZONTALMENTE */
+  justify-content: space-between; /* JUSTIFICA OS ITENS JOGANDO UM PARA CADA CANTO */
 }
 
 .card p {
@@ -65,8 +133,14 @@ header {
 }
 
 .card.total { /* PODEMOS SELECIONAR VÁRIAS CLASSES */
-  background: #49aa26;
+  background: var(--green);
   color: white;
+}
+
+#transaction {
+  display: block; /* ESTA COMBINAÇÃO CRIA UMA BARRA DE ROLAGEM */
+  width: 100%; /* UMA BARRA PARA O CAMPO QUE ESTÁ A TABELA */
+  overflow-x: auto; /* E NÃO UMA BARRA NA TABELA */
 }
 
 #data-table {
@@ -75,9 +149,16 @@ header {
   color: var(--dark-blue);
 }
 
+/* VAI SELECIONAR O PRIMEIRO FILHO DO TR TH*/
 table thead tr th:first-child,
-table tbody tr td:first-child { /* VAI SELECIONAR O PRIMEIRO FILHO DO TR TH*/
+table tbody tr td:first-child {
   border-radius: 0.25rem 0 0 0.25rem;
+}
+
+/* VAI SELECIONAR O ÚLTIMO FILHO DO TR TH*/
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 table th {
@@ -112,9 +193,87 @@ td.expense {
   color: #e92929;
 }
 
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed; /* ATIVA ALGUMAS FUNÇÕES COMO TOP */
+  top: 0;
+  display: flex;
+  align-items: center; /* ALINHA VERTICALMENTE */
+  justify-content: center; /* ALINHA HORIZONTALMENTE */
+  opacity: 0; /* OCULTA MAIS O ITEM EXISTE NA TELA */
+  visibility: hidden; /* REMOVE O ITEM DA TELA */
+  z-index: 999; /* AQUELA FUNCIONALIDADE DE TRAZER PARA FRENTE OU PARA TRÁS */
+}
+
+/* ESTA ESTILIZAÇÃO VAI ACONTECER QUANTO EXISTIR ESTAS CLASSES */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+  position: relative;
+  z-index: 1;
+  /* width: 90%; */
+  /* max-width: 500px; TAMANHO MÁXIMO */
+}
+
+#form {
+  max-width: 500px; /* TAMANHO MÁXIMO */
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
 footer {
   text-align: center;
   padding: 4rem 0 2rem;
   color: var(--dark-blue);
   opacity: 0.6;
+}
+
+/* CRIAÇÃO DE REGRAS */
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid; /* HORIZONTAL E VERTICAL */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* FAZ REPETIR 1 FRAÇÃO 3 VEZES */
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 2rem;
+  }
 }

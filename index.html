@@ -1,79 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head> <!-- OS METADADOS REFERENCIA OS ARQUIVOS COMO DEFINIR NO NOME DE CABEÇALHO -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dev.finance$</title>
-  
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-
-<body> <!-- ESTE ITEM O USUÁRIO POSSUI ACESSO E NAO E UM METADADO -->
-  <header> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
-    <h1 id="logo">dev.finance$</h1> <!-- CRIA UM TÍTULO -->
-  </header>
-  
-  <main class="container"> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
-    <section id="balance"> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
-      <h2>Balanço</h2> <!-- CRIA UM SUBTITULO -->
-      
-      <div class="card">
-        <h3>Entradas</h3>
-        <p>R$ 5.000,00</p> <!-- CRIA UM PARAGRAFO -->
-      </div>
-      
-      <div class="card"> <!-- CRIA UMA DIVISÃO GENÉRICA -->
-        <h3>Saídas</h3>
-        <p>R$ 2.000,00</p>
-      </div>
-      
-      <div class="card total">
-        <h3>Total</h3>
-        <p>R$ 3.000,00</p>
-      </div>
-    </section>
+  <head> <!-- OS METADADOS REFERENCIA OS ARQUIVOS COMO DEFINIR NO NOME DE CABEÇALHO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.finance$</title>
     
-    <section id="transaction">
-      <h2>Transações</h2>
-      
-      <table id="data-table"> <!-- CRIA UMA TABELA -->
-        <thead> <!-- DEFINE O CABEÇALHO -->
-          <tr> <!-- CRIA UMA LINHA -->
-            <th>Descrição</th> <!-- CRIA UMA COLUNA -->
-            <th>Valor</th>
-            <th>Data</th>
-          </tr>
-        </thead>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body> <!-- ESTE ITEM O USUÁRIO POSSUI ACESSO E NAO E UM METADADO -->
+    <header> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+      <!-- CRIA UM TÍTULO -->
+      <!-- <h1 id="logo">dev.finance$</h1> -->
+      <!-- CRIA UMA IMAGEM ONDE SRC É A IMAGEM ALT É OQUE DEVE APARECER SE NÃO CARREGAR -->
+      <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    </header>
+    
+    <main class="container"> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+      <section id="balance"> <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+        <h2 class="sr-only">Balanço</h2> <!-- CRIA UM SUBTITULO -->
         
-        <tbody> <!-- CRIA O LOCAL DOS DADOS DA TABELA -->
-          <tr>
-            <td class="description">Luz</td>
-            <td class="expense">- R$ 500,00</td>
-            <td class="date">23/01/2021</td>
-          </tr>
+        <div class="card">
+          <h3>
+            <span>Entradas</span>
+            <img src="./assets/income.svg" alt="Imagem de entradas">
+          </h3>
+          <p>R$ 5.000,00</p> <!-- CRIA UM PARAGRAFO -->
+        </div>
+        
+        <div class="card"> <!-- CRIA UMA DIVISÃO GENÉRICA -->
+          <h3>
+            <span>Saídas</span>
+            <img src="./assets/expense.svg" alt="Imagem de saídas">
+          </h3>
+          <p>R$ 2.000,00</p>
+        </div>
+        
+        <div class="card total">
+          <h3>
+            <span>Total</span>
+            <img src="./assets/total.svg" alt="Imagem de total">
+          </h3>
+          <p>R$ 3.000,00</p>
+        </div>
+      </section>
+      
+      <section id="transaction">
+        <h2 class="sr-only">Transações</h2>
+        
+        <a href="#" onclick="Modal.open()" class="button new">+ Nova transação</a>
+        
+        <table id="data-table"> <!-- CRIA UMA TABELA -->
+          <thead> <!-- DEFINE O CABEÇALHO -->
+            <tr> <!-- CRIA UMA LINHA -->
+              <th>Descrição</th> <!-- CRIA UMA COLUNA -->
+              <th>Valor</th>
+              <th>Data</th>
+              <th></th>
+            </tr>
+          </thead>
           
-          <tr>
-            <td class="description">Criação de web site</td>
-            <td class="income">R$ 5.000,00</td>
-            <td class="date">23/01/2021</td>
-          </tr>
-          
-          <tr>
-            <td class="description">Internet</td>
-            <td class="expense">- R$ 200,00</td>
-            <td class="date">23/01/2021</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
-  
-  <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
-  <footer>
-    <p>dev.finance$</p>
-  </footer>
-</body>
+          <tbody> <!-- CRIA O LOCAL DOS DADOS DA TABELA -->
+            <tr>
+              <td class="description">Luz</td>
+              <td class="expense">- R$ 500,00</td>
+              <td class="date">23/01/2021</td>
+              <td><img src="./assets/minus.svg" alt="Remover transação"></td>
+            </tr>
+            
+            <tr>
+              <td class="description">Criação de web site</td>
+              <td class="income">R$ 5.000,00</td>
+              <td class="date">23/01/2021</td>
+              <td><img src="./assets/minus.svg" alt="Remover transação"></td>
+            </tr>
+            
+            <tr>
+              <td class="description">Internet</td>
+              <td class="expense">- R$ 200,00</td>
+              <td class="date">23/01/2021</td>
+              <td><img src="./assets/minus.svg" alt="Remover transação"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    
+    <!-- CAMPO PARA CRIAR UMA NOVA TRANSAÇÃO -->
+    <!-- <div class="modal-overlay active"> -->
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">
+          <h2>Nova transação</h2>
+          <form action="">
+            <div class="input-group">
+              <label class="sr-only" for="description">Descrição</label> <!-- TEXTO GUIA DO INPUT -->
+              <input type="text" tabindex="1" id="description" name="description" placeholder="Descrição"> <!-- INPUT PARA PREENCHER -->
+            </div>
+            
+            <div class="input-group">
+              <label class="sr-only" for="amount">Valor</label>
+              <input type="number" tabindex="2" step="0.01" id="amount" name="amount" placeholder="0,00">
+              <!-- DEIXA O TEXTO PEQUENO -->
+              <small class="help">Use o sinal de menos para despesas e virgula para as casa decimais</small>
+            </div>
+            
+            <div class="input-group">
+              <label class="sr-only" for="date">Data</label>
+              <input type="date" tabindex="3" id="date" name="date" placeholder="dd/mm/aaaa">
+            </div>
+            
+            <div class="input-group actions">
+              <a href="#" tabindex="5" onclick="Modal.close()" class="button cancel">Cancelar</a>
+              <button tabindex="4" >Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ESTE ITEM CRIA UM ESTRUTURA SEMÂNTICA -->
+    <footer>
+      <p>dev.finance$</p>
+    </footer>
+    
+    <!-- PARA CONSEGUIR UTILIZAR O JAVASCRIPT -->
+    <script>
+      const Modal = {
+        open() {
+          // MODELO DE TODO NOSSO HTML EM OBJETO
+          document.querySelector('.modal-overlay').classList.add('active');
+          document.querySelector('.button.new').setAttribute('tabindex', '-1');
+        },
+        
+        close() {
+          document.querySelector('.modal-overlay').classList.remove('active');
+          document.querySelector('.button.new').setAttribute('tabindex', '0');
+        }
+      }
+
+      // EXECUTA CERTO GRUPO DE COMANDO QUANDO UMS TECLA A PRESSIONADA
+      window.onkeydown = function(event) {
+        if ( event.keyCode == 107 ) { // +
+          Modal.open();
+        }
+        
+        if ( event.keyCode == 27 ) { // ESC
+          Modal.close();
+        }
+      };
+    </script>
+  </body>
 </html>

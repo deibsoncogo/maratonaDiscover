@@ -3,7 +3,6 @@ Um curso realizado pelo **Mayk Brito** da Rocketseat
 
 Neste curso iremos criar uma aplicação com a **metodologia de frontend** usado HTML, CSS, JavaScript e mais algumas outras coisas
 
-
 ## Aula 1 - A base de tudo
 >Estratégias importantes para seu estudo de programação Web, ajustar sua mentalidade, conhecer nossa comunidade, além da apresentação das tecnologias HTML e CSS que usaremos na nossa Aplicação e o melhor: Vamos iniciar nosso app
 
@@ -28,3 +27,20 @@ Devemos criar a estilização em um arquivo separado mais evitar poluição visu
 Box mode é o modelo das tag que o usuário visualiza
 
 >14/01/2021
+
+## Aula 2 - Finalização do HTML + CSS
+Temos o site [CSS Tricks](https://css-tricks.com/) que é composto por diversas idéias de como usar o CSS, um site idéal para você se rever oque já esqueceu a aprender novas formas de aplicação
+
+Para criar uma classe automaticamente com o Emmit usamos o sinal de ponto, o carácter jogo da velha nos fala que não devemos sair da página atual ao clica no link
+````
+a.button.new
+<a href="#" class="button new">+ Nova Transações</a>
+````
+
+Uma font size 100% é igual a 16px em um navegador
+
+O display grid permite você manipular a caixa desde horizontalmente como verticalmente
+
+Input é a entrada de dados e output são as saídas, o form serve para capturar dados
+
+>21/01/2021
