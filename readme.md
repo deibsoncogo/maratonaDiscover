@@ -29,6 +29,8 @@ Box mode é o modelo das tag que o usuário visualiza
 >14/01/2021
 
 ## Aula 2 - Finalização do HTML + CSS
+>Vamos adicionar detalhes mais elegantes, como imagens, acessibilidade e disposição dos elementos na página. Finalizaremos o HTML e o CSS da nossa aplicação.
+
 Temos o site [CSS Tricks](https://css-tricks.com/) que é composto por diversas idéias de como usar o CSS, um site idéal para você se rever oque já esqueceu a aprender novas formas de aplicação
 
 Para criar uma classe automaticamente com o Emmit usamos o sinal de ponto, o carácter jogo da velha nos fala que não devemos sair da página atual ao clica no link
