@@ -218,8 +218,8 @@ td.expense {
   padding: 2.4rem;
   position: relative;
   z-index: 1;
-  /* width: 90%; */
-  /* max-width: 500px; TAMANHO MÁXIMO */
+  width: 90%;
+  max-width: 500px; /* TAMANHO MÁXIMO */
 }
 
 #form {
@@ -241,7 +241,7 @@ input {
   margin-top: 0.8rem;
 }
 
-.input-group small {
+.input-group .help {
   opacity: 0.4;
 }
 

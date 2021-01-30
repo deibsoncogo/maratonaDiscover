@@ -46,3 +46,32 @@ O display grid permite você manipular a caixa desde horizontalmente como vertic
 Input é a entrada de dados e output são as saídas, o form serve para capturar dados
 
 >21/01/2021
+
+## Aula 3 - Adicionando JavaScript
+>Nessa aula deixaremos a nossa aplicação funcional! Aplicaremos a linguagem JavaScript e faremos nosso programa ter funcionalidades como calcular as entradas e saídas, adicionar e remover uma transação e salvar tudo no navegador.
+
+Primeiro de tudo vamos remover os comandos de JavaScript no index e colocar no arquivo script.js assim deixando o arquivo mais limpo e fácil de entender
+````
+<script src="./script.js"></script>
+````
+
+Existe um truque para tratar com dinheiro onde usamos somente números e depois formatamos
+````
+R$ -500,00    -->   -50000
+````
+
+A utilização de template literals (``) permite usar variáveis como abaixo
+````
+const html = `
+  <td class="description">${transaction.description}</td>
+`
+````
+
+O COMANDO ABAIXO FAZ A SUBSTITUIÇÃO DE CARÁCTERES
+````
+replace(/\D/g, "")
+````
+
+Realizei diversas anotações nos comandos, então para ver tudo que aconteceu temos que fuçar os demais arquivos
+
+>29/01/2021
