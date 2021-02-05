@@ -146,8 +146,14 @@ const DOM = {
 // CRIAÇÃO DE DIVERSAS COISAS UTEIS
 const Utils = {
   formatAmount(value) {
-    value = Number(value.replace(/\,\./g, "")) * 100
-    return value
+    // DEVEMOS USAR O ? PARA QUE QUE DEVE REMOVER UM OU OUTRO
+    // value = Number(value.replace(/\,?\.?/g, "")) * 100
+
+    // MULTIPLICA O VALOR PARA AJUSTAR AS CASAS DECIMAIS
+    value = value * 100
+
+    // ARREDONDA O VALOR RECEBIDO
+    return Math.round(value)
   },
 
   formatDate(date) {
