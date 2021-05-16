@@ -6,10 +6,10 @@ Para facilitar na criação do projeto foi utilizado a extensão `Live Server` n
 
 ## Imagens
 
-![Tela inicial sem registros](/src/assets/prints/print1.png)
+![Tela inicial sem registros](/assets/prints/print1.png)
 
 
-![Tela que adiciona registro](/src/assets/prints/print2.png)
+![Tela que adiciona registro](/assets/prints/print2.png)
 
 
-![Tela inicial com registros](/src/assets/prints/print3.png)
+![Tela inicial com registros](/assets/prints/print3.png)
